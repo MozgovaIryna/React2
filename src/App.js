@@ -1,25 +1,25 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Dialoges from "./components/Dialoges/Dialoges";
 import Header from "./components/Header/Header";
-import Nav from "./components/Nav/Nav";
-import Profile from "./components/Profile/Profile";
-import { BrowserRouter } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
 import Music from "./components/Music/Music";
+import Nav from "./components/Nav/Nav";
 import News from "./components/News/News";
+import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
 import store from "./redux/state";
 
 const App = () => {
-  console.log(store._state);
+  console.log(store._state.profilePage);
   return (
     <div className="app-wrapper">
       <Header />
-      {/* <Nav store={store._state.sidebar} /> */}
       <div className="app-wrapper-content">
         <BrowserRouter>
           <Routes>
+            <Route path="/" element={
+              <Nav store={store._state.sidebar} />} />
             <Route
               path="/dialoges/*"
               element={<Dialoges page={store._state.dialogsPage} />}
