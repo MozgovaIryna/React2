@@ -1,20 +1,20 @@
 import React from "react";
+import store from "../../../redux/state";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import store from "../../../redux/state";
 
 const MyPosts = ({ post }) => {
   let newPostElement = React.createRef();
 
-  let addPost = () => {
-        store.addPost();
+  // let addPost = () => {
+  //       store.addPost();
   
-  };
+  // };
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-   store.updateNewPostText();
-  }
+  // let onPostChange = () => {
+  //   let text = newPostElement.current.value;
+  //  store.updateNewPostText();
+  // }
 
   return (
     <div>
