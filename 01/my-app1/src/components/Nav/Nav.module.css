@@ -1,0 +1,14 @@
+.nav {
+  grid-area: n;
+  background-color: rgb(193, 202, 202);
+  padding: 20px;
+  text-decoration: none;
+ font-size: 24px;
+}
+.item a{
+  color: white;
+  text-decoration: none;
+}
+.item :hover {
+  color: gold;
+}
