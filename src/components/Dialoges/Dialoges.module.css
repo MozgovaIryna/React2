@@ -1,0 +1,43 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 3fr 10fr;
+
+  background-color: gold;
+}
+.dialogsItem {
+}
+.dialogsItem a:hover {
+  color: rgb(247, 17, 17);
+}
+.dialog a {
+  text-decoration: none;
+  color: white;
+  align-items: baseline;
+}
+
+.message {
+  padding: 10px;
+  color: blue;
+
+  width: 100%;
+}
+.dialog {
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: row;
+}
+.circle {
+  background-color: aliceblue;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dial{
+  display: flex;
+}
+
+.dial:nth-child(even) {
+ 
+ 
+  
+}
