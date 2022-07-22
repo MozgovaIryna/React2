@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./../Dialoges.module.css";
-import { NavLink } from "react-router-dom";
 
 const Message = ({ message }) => {
   let newMessage = React.createRef();

@@ -9,28 +9,28 @@ import { Route, Routes } from "react-router-dom";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
-import { store } from "./redux/state";
+import store from "./redux/state";
 
-const App = ({ store }) => {
-  console.log({ store });
+const App = () => {
+  console.log(store._state);
   return (
     <div className="app-wrapper">
       <Header />
-      <Nav store={store.sidebar} />
+      {/* <Nav store={store._state.sidebar} /> */}
       <div className="app-wrapper-content">
         <BrowserRouter>
           <Routes>
             <Route
               path="/dialoges/*"
-              element={<Dialoges page={store.dialogsPage} />}
+              element={<Dialoges page={store._state.dialogsPage} />}
             />
             <Route
               path="/profile"
               element={
                 <Profile
-                  page={store.profilePage}
-                  addPost={store.addPost}
-                  updateNewPostText={store.updateNewPostText}
+                  page={store._state.profilePage}
+                  addPost={store._state.addPost}
+                  updateNewPostText={store._state.updateNewPostText}
                 />
               }
             />
