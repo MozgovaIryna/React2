@@ -12,13 +12,13 @@ import Settings from "./components/Settings/Settings";
 import store from "./redux/state";
 
 const App = () => {
-  console.log(store._state);
+  
   return (
     <div className="app-wrapper">
       <Header />
-      {/* <Nav store={store._state.sidebar} /> */}
+      <Nav sidebar = {store._state.sidebar}/> 
       <div className="app-wrapper-content">
-        <BrowserRouter>
+        
           <Routes>
             <Route
               path="/dialoges/*"
@@ -38,7 +38,7 @@ const App = () => {
             <Route path="/news" element={<News />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-        </BrowserRouter>
+  
       </div>
     </div>
   );

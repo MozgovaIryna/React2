@@ -2,7 +2,7 @@ import React from "react";
 import s from "./ProfileInfo.module.css";
 
 
-const ProfileInfo = () => {
+const ProfileInfo = ({store}) => {
   return (
     <div className={s.postsBlock}>
        <div className={s.newBlock}>

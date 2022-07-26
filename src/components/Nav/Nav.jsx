@@ -3,8 +3,8 @@ import s from "./Nav.module.css";
 import { NavLink } from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 
-{/* <Sidebar /> */ }
-const Nav = ({ store }) => {
+<Sidebar />;
+const Nav = ({ sidebar }) => {
   return (
     <nav className={s.nav}>
       <div className={s.item}>
@@ -25,7 +25,14 @@ const Nav = ({ store }) => {
       <div className={s.item}>
         <h3>Friends</h3>
         <div>
-          {store.friends.map((side) => (<Sidebar key={side.id} name={side.name} photo={side.photo} id={side.id} />))}
+          {sidebar.friends.map((side) => (
+            <Sidebar
+              key={side.id}
+              name={side.name}
+              photo={side.photo}
+              id={side.id}
+            />
+          ))}
         </div>
       </div>
     </nav>
