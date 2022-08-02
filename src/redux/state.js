@@ -1,3 +1,5 @@
+import Post from "../components/Profile/My posts/Post/Post";
+
 let store = {
   _state: {
     profilePage: {
@@ -10,7 +12,7 @@ let store = {
       ],
       newPostText: "it",
     },
-  
+
     dialogsPage: {
       dialogsData: [
         {
@@ -59,7 +61,7 @@ let store = {
         { id: 6, message: "Yo" },
       ],
     },
-     sidebar: {
+    sidebar: {
       friends: [
         {
           id: 1,
@@ -82,28 +84,32 @@ let store = {
       ],
     },
   },
-  getState(){
+  getState() {
     return this._state;
   },
-  callSubscriber () {
-    console.log("State change");},
-      addPost () {
+  callSubscriber() {
+    console.log("State change");
+  },
+  addPost(postMessage) {
+    debugger;
     let newPost = {
       id: 6,
-      message: this._state.profilePage.newPostText,
+      message: postMessage,
+      /*  message: this._state.profilePage.newPostText, */
       likesCount: 0,
     };
     this._state.profilePage.postData.push(newPost);
     this._state.profilePage.newPostText = "";
     this.callSubscriber(this._state);
   },
-  updateNewPostText(newText){
+  updateNewPostText(newText) {
     this._state.profilePage.newPostText = newText;
     this._callSubscriber(this._state);
   },
-  subscribe(observer)  {
+  subscribe(observer) {
     this._callSubscriber = observer;
-  }
-}
+  },
+};
 window.store = store;
+
 export default store;

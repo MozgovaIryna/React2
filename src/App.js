@@ -12,7 +12,7 @@ import Settings from "./components/Settings/Settings";
 import store from "./redux/state";
 
 const App = () => {
-  
+ 
   return (
     <div className="app-wrapper">
       <Header />

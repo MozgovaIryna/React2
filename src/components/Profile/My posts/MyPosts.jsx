@@ -2,17 +2,19 @@ import React from "react";
 import store from "../../../redux/state";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import { ReactDOM } from "react";
 
 const MyPosts = ({ message }) => {
-  /* let newPostElement = React.createRef(); */
+  let newPost = React.createRef();
+  let addPost = () => {
+    debugger;
+    let text = newPost.current.value;
+    store.addPost(text);
 
-  // let addPost = () => {
-  //       store.addPost();
-
-  // };
+    /* alert(text); */
+  };
 
   // let onPostChange = () => {
-  //   let text = newPostElement.current.value;
   //  store.updateNewPostText();}
   return (
     <div>
@@ -21,9 +23,9 @@ const MyPosts = ({ message }) => {
       </div>
 
       <div>
-        <textarea></textarea>
+        <textarea ref={newPost}></textarea>
       </div>
-      <button> Add post </button>
+      <button onClick={addPost}> Add post </button>
       <div className={s.posts}>
         {message.map((p) => (
           <Post message={p.message} likesCount={p.likesCount} />
