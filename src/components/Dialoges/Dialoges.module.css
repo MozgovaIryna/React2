@@ -33,7 +33,7 @@
   border-radius: 50%;
 }
 .dial{
-  display: flex;
+  
 }
 
 .dial:nth-child(even) {

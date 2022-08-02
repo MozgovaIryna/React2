@@ -11,12 +11,20 @@ import Settings from "./components/Settings/Settings";
 import store from "./redux/state";
 
 const App = () => {
+<<<<<<< HEAD
   console.log(store._state.profilePage);
   return (
     <div className="app-wrapper">
       <Header />
+=======
+  
+  return (
+    <div className="app-wrapper">
+      <Header />
+      <Nav sidebar = {store._state.sidebar}/> 
+>>>>>>> dc9d00a0f30a5a16c0b717f0b445d0258107456f
       <div className="app-wrapper-content">
-        <BrowserRouter>
+        
           <Routes>
             <Route path="/" element={
               <Nav store={store._state.sidebar} />} />
@@ -38,7 +46,7 @@ const App = () => {
             <Route path="/news" element={<News />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-        </BrowserRouter>
+  
       </div>
     </div>
   );
