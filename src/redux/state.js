@@ -88,23 +88,25 @@ let store = {
     return this._state;
   },
   callSubscriber() {
-    console.log("State change");
+    console.log("State changed");
   },
-  addPost(postMessage) {
+  addPost() {
     debugger;
     let newPost = {
       id: 6,
-      message: postMessage,
-      /*  message: this._state.profilePage.newPostText, */
+      message: this._state.profilePage.newPostText,
       likesCount: 0,
     };
     this._state.profilePage.postData.push(newPost);
     this._state.profilePage.newPostText = "";
     this.callSubscriber(this._state);
+  
+    /* rerenderEntireTree = this._state; */
   },
   updateNewPostText(newText) {
     this._state.profilePage.newPostText = newText;
-    this._callSubscriber(this._state);
+    this.callSubscriber(this._state);
+    /*   this._callSubscriber(this._state); */
   },
   subscribe(observer) {
     this._callSubscriber = observer;

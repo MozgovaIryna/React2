@@ -1,5 +1,5 @@
 import React from "react";
-import store from "../../../redux/state";
+import store from "../../../redux/state"; 
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import { ReactDOM } from "react";
@@ -7,15 +7,15 @@ import { ReactDOM } from "react";
 const MyPosts = ({ message }) => {
   let newPost = React.createRef();
   let addPost = () => {
-    debugger;
+ 
     let text = newPost.current.value;
     store.addPost(text);
 
     /* alert(text); */
   };
 
-  // let onPostChange = () => {
-  //  store.updateNewPostText();}
+  let onPostChange = () => {
+store.updateNewPostText();}
   return (
     <div>
       <div>

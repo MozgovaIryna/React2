@@ -1,7 +1,7 @@
 import React from "react";
 import MyPosts from "./My posts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-
+import News from "./../News/News";
 
 const Profile = ({ page, addPost, updateNewPostText }) => {
   return (
@@ -9,8 +9,9 @@ const Profile = ({ page, addPost, updateNewPostText }) => {
       <ProfileInfo />
       <MyPosts
         message={page.postData}
-        /* addPost={addPost} */
-       /*  updateNewPostText={updateNewPostText} */
+        newPostText={page.newPostText}
+        addPost={addPost} 
+        updateNewPostText={updateNewPostText}
       />
     </div>
   );
