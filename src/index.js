@@ -7,13 +7,13 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 
 
-let rerenderEntireTree = () => {
+let rerenderEntireTree = (state) => {
  
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <React.StrictMode>
        <BrowserRouter>
-      <App store={store.getState()} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)} />
+      <App state={state} dispatch={store.dispatch.bind(store)}/* addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store) } *//>
    {/* {/*    // store={store._state} */}
       
        

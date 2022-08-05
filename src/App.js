@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Dialoges from "./components/Dialoges/Dialoges";
+import Dialoges from "./components/Dialoges/Dialogs";
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Profile from "./components/Profile/Profile";
@@ -11,7 +11,7 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import store from "./redux/state";
 
-const App = () => {
+const App = (props) => {
  
   return (
     <div className="app-wrapper">
@@ -22,15 +22,16 @@ const App = () => {
           <Routes>
             <Route
               path="/dialoges/*"
-              element={<Dialoges page={store._state.dialogsPage} />}
+              element={<Dialoges state={props.state.dialogsPage} />}
             />
             <Route
               path="/profile"
               element={
                 <Profile
-                  page={store._state.profilePage}
-                  addPost={store._state.addPost}
-                  updateNewPostText={store._state.updateNewPostText}
+                profilePage={props.state.profilePage}
+                dispatch={props.dispatch}
+                  /* addPost={store._state.addPost}
+                  updateNewPostText={store._state.updateNewPostText} */
                 />
               }
             />

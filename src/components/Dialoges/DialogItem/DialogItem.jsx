@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./../Dialoges.module.css";
+import s from './../Dialogs.module.css';
 import { NavLink } from "react-router-dom";
 
 const DialogItem = ({ name, id, photo }) => {
