@@ -1,18 +1,18 @@
 let store = {
   _state: {
     profilePage: {
-      postData: [
+      posts: [
         { id: 1, message: "Hi, how you!", likesCount: 12 },
         { id: 2, message: "Hi, well!", likesCount: 13 },
         { id: 3, message: "Hi, I love you!", likesCount: 10 },
         { id: 4, message: "Hi, I love you!", likesCount: 18 },
         { id: 5, message: "Hi, I love you!", likesCount: 19 },
       ],
-      newPostText: "it",
+      newPostText: "it"
     },
 
     dialogsPage: {
-      dialogsData: [
+      dialogs: [
         {
           id: 1,
           name: "Anna",
@@ -50,7 +50,7 @@ let store = {
             "https://cdn.pixabay.com/photo/2016/08/22/11/00/emoticon-1611718_960_720.png",
         },
       ],
-      messagesData: [
+      messages: [
         { id: 1, message: "Hi" },
         { id: 2, message: "How are you" },
         { id: 3, message: "Very Well" },
@@ -82,6 +82,7 @@ let store = {
       ],
     },
   },
+<<<<<<< HEAD
   //   // getState(){
   //   //   return this._state;
   //   // },
@@ -105,5 +106,54 @@ let store = {
   //   //   this._callSubscriber = observer;
   // }
 }
+=======
+  getState() {
+    return this._state;
+  },
+  callSubscriber() {
+    console.log("State changed");
+  },
+  subscribe(observer) {
+    this._callSubscriber = observer;
+  },
+ /*  addPost() {
+    debugger;
+    let newPost = {
+      id: 6,
+      message: this._state.profilePage.newPostText,
+      likesCount: 0,
+    };
+    this._state.profilePage.postData.push(newPost);
+    this._state.profilePage.newPostText = "";
+    this.callSubscriber(this._state);
+  
+    /* rerenderEntireTree = this._state;   updateNewPostText(newText) {
+    this._state.profilePage.newPostText = newText;
+    this.callSubscriber(this._state);
+    
+  },  */
+
+  dispatch (action){
+   
+    if(action.type === "ADD-POST"){
+      
+      let newPost = {
+        id: 6,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0
+      };
+      this._state.profilePage.posts.push(newPost);
+     
+      this._state.profilePage.newPostText = "";
+      this.callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW-POST-TEXT"){
+      this._state.profilePage.newPostText = action.newText;
+    this.callSubscriber(this._state);
+    }
+  } 
+ 
+};
+>>>>>>> f16b06e7aeeaab776087479862cb21ae0512192f
 window.store = store;
+
 export default store;

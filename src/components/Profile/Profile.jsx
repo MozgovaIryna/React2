@@ -1,16 +1,16 @@
 import React from "react";
 import MyPosts from "./My posts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import News from "./../News/News";
 
-
-const Profile = ({ page, addPost, updateNewPostText }) => {
+const Profile = (props) => {
   return (
     <div>
       <ProfileInfo />
       <MyPosts
-        message={page.postData}
-        /* addPost={addPost} */
-       /*  updateNewPostText={updateNewPostText} */
+        posts={props.profilePage.posts}
+        newPostText={props.profilePage.newPostText}
+        dispatch={props.dispatch}
       />
     </div>
   );

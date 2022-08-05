@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Dialoges from "./components/Dialoges/Dialoges";
+import Dialoges from "./components/Dialoges/Dialogs";
 import Header from "./components/Header/Header";
 import Music from "./components/Music/Music";
 import Nav from "./components/Nav/Nav";
@@ -10,6 +10,7 @@ import Profile from "./components/Profile/Profile";
 import Settings from "./components/Settings/Settings";
 import store from "./redux/state";
 
+<<<<<<< HEAD
 const App = () => {
 <<<<<<< HEAD
   console.log(store._state.profilePage);
@@ -18,6 +19,10 @@ const App = () => {
       <Header />
 =======
   
+=======
+const App = (props) => {
+ 
+>>>>>>> f16b06e7aeeaab776087479862cb21ae0512192f
   return (
     <div className="app-wrapper">
       <Header />
@@ -30,15 +35,16 @@ const App = () => {
               <Nav store={store._state.sidebar} />} />
             <Route
               path="/dialoges/*"
-              element={<Dialoges page={store._state.dialogsPage} />}
+              element={<Dialoges state={props.state.dialogsPage} />}
             />
             <Route
               path="/profile"
               element={
                 <Profile
-                  page={store._state.profilePage}
-                  addPost={store._state.addPost}
-                  updateNewPostText={store._state.updateNewPostText}
+                profilePage={props.state.profilePage}
+                dispatch={props.dispatch}
+                  /* addPost={store._state.addPost}
+                  updateNewPostText={store._state.updateNewPostText} */
                 />
               }
             />
